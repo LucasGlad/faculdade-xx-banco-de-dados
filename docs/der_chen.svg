@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" width="100%" height="100%" style="background:#ffffff; font-family: 'Segoe UI', Arial, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2.5" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="550" y="35" text-anchor="middle" font-size="20" font-weight="bold" fill="#1E293B">MODELO CONCEITUAL — DIAGRAMA DE PETER CHEN (MER)</text>
+  <text x="550" y="55" text-anchor="middle" font-size="12" fill="#64748B">Entidades Fortes, Entidades Associativas e Relacionamentos com Cardinalidade (min, max)</text>
+
+  <!-- LINES / CONNECTORS -->
+  <!-- Depto - Lota - Professor -->
+  <line x1="160" y1="140" x2="260" y2="140" stroke="#475569" stroke-width="1.8"/>
+  <line x1="340" y1="140" x2="440" y2="140" stroke="#475569" stroke-width="1.8"/>
+
+  <!-- Depto - Gerencia - Curso -->
+  <line x1="100" y1="170" x2="100" y2="270" stroke="#475569" stroke-width="1.8"/>
+  <line x1="100" y1="330" x2="100" y2="430" stroke="#475569" stroke-width="1.8"/>
+
+  <!-- Curso - Estrutura - Disciplina -->
+  <line x1="160" y1="460" x2="260" y2="460" stroke="#475569" stroke-width="1.8"/>
+  <line x1="340" y1="460" x2="440" y2="460" stroke="#475569" stroke-width="1.8"/>
+
+  <!-- Professor - Leciona - Turma -->
+  <line x1="560" y1="140" x2="680" y2="240" stroke="#7C3AED" stroke-width="2"/>
+  <line x1="720" y1="280" x2="770" y2="330" stroke="#7C3AED" stroke-width="2"/>
+
+  <!-- Disciplina - Oferta - Turma -->
+  <line x1="560" y1="460" x2="680" y2="400" stroke="#0D9488" stroke-width="2"/>
+  <line x1="720" y1="380" x2="770" y2="360" stroke="#0D9488" stroke-width="2"/>
+
+  <!-- Turma - Matrícula - Aluno -->
+  <line x1="890" y1="360" x2="940" y2="360" stroke="#DC2626" stroke-width="2"/>
+  <line x1="1020" y1="360" x2="1020" y2="200" stroke="#DC2626" stroke-width="2"/>
+
+  <!-- Curso - Vincula - Aluno -->
+  <line x1="100" y1="490" x2="100" y2="600" stroke="#475569" stroke-width="1.8"/>
+  <line x1="100" y1="600" x2="980" y2="600" stroke="#475569" stroke-width="1.8"/>
+  <line x1="980" y1="600" x2="980" y2="200" stroke="#475569" stroke-width="1.8"/>
+
+  <!-- ENTITIES (Rectangles) -->
+  <!-- DEPARTAMENTO -->
+  <g transform="translate(40, 110)" filter="url(#shadow)">
+    <rect width="120" height="60" rx="4" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+    <text x="60" y="35" text-anchor="middle" font-size="12" font-weight="bold" fill="#1E40AF">DEPARTAMENTO</text>
+  </g>
+
+  <!-- PROFESSOR -->
+  <g transform="translate(440, 110)" filter="url(#shadow)">
+    <rect width="120" height="60" rx="4" fill="#F0FDFA" stroke="#0D9488" stroke-width="2"/>
+    <text x="60" y="35" text-anchor="middle" font-size="12" font-weight="bold" fill="#0F766E">PROFESSOR</text>
+  </g>
+
+  <!-- CURSO -->
+  <g transform="translate(40, 430)" filter="url(#shadow)">
+    <rect width="120" height="60" rx="4" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+    <text x="60" y="35" text-anchor="middle" font-size="12" font-weight="bold" fill="#1E40AF">CURSO</text>
+  </g>
+
+  <!-- DISCIPLINA -->
+  <g transform="translate(440, 430)" filter="url(#shadow)">
+    <rect width="120" height="60" rx="4" fill="#F0FDFA" stroke="#0D9488" stroke-width="2"/>
+    <text x="60" y="35" text-anchor="middle" font-size="12" font-weight="bold" fill="#0F766E">DISCIPLINA</text>
+  </g>
+
+  <!-- TURMA -->
+  <g transform="translate(770, 330)" filter="url(#shadow)">
+    <rect width="120" height="60" rx="4" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2.5"/>
+    <text x="60" y="35" text-anchor="middle" font-size="13" font-weight="bold" fill="#5B21B6">TURMA</text>
+  </g>
+
+  <!-- ALUNO -->
+  <g transform="translate(930, 140)" filter="url(#shadow)">
+    <rect width="120" height="60" rx="4" fill="#F0F9FF" stroke="#0284C7" stroke-width="2"/>
+    <text x="60" y="35" text-anchor="middle" font-size="13" font-weight="bold" fill="#0369A1">ALUNO</text>
+  </g>
+
+  <!-- RELATIONSHIPS (Diamonds) -->
+  <!-- LOTA -->
+  <g transform="translate(300, 140)" filter="url(#shadow)">
+    <polygon points="0,-25 40,0 0,25 -40,0" fill="#FFFFFF" stroke="#475569" stroke-width="1.8"/>
+    <text x="0" y="4" text-anchor="middle" font-size="11" font-weight="bold" fill="#334155">Lota</text>
+  </g>
+  <text x="180" y="132" font-size="11" font-weight="bold" fill="#1E293B">(1, N)</text>
+  <text x="400" y="132" font-size="11" font-weight="bold" fill="#1E293B">(1, 1)</text>
+
+  <!-- GERENCIA -->
+  <g transform="translate(100, 300)" filter="url(#shadow)">
+    <polygon points="0,-25 40,0 0,25 -40,0" fill="#FFFFFF" stroke="#475569" stroke-width="1.8"/>
+    <text x="0" y="4" text-anchor="middle" font-size="10" font-weight="bold" fill="#334155">Gerencia</text>
+  </g>
+  <text x="110" y="210" font-size="11" font-weight="bold" fill="#1E293B">(1, N)</text>
+  <text x="110" y="400" font-size="11" font-weight="bold" fill="#1E293B">(1, 1)</text>
+
+  <!-- MATRIZ CURRICULAR (Composição) -->
+  <g transform="translate(300, 460)" filter="url(#shadow)">
+    <polygon points="0,-25 45,0 0,25 -45,0" fill="#FFFFFF" stroke="#475569" stroke-width="1.8"/>
+    <text x="0" y="4" text-anchor="middle" font-size="10" font-weight="bold" fill="#334155">Estrutura</text>
+  </g>
+  <text x="180" y="452" font-size="11" font-weight="bold" fill="#1E293B">(1, N)</text>
+  <text x="400" y="452" font-size="11" font-weight="bold" fill="#1E293B">(1, N)</text>
+
+  <!-- LECIONA / ALOCA PROFESSOR -->
+  <g transform="translate(700, 260)" filter="url(#shadow)">
+    <polygon points="0,-25 45,0 0,25 -45,0" fill="#FAF5FF" stroke="#7C3AED" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-size="11" font-weight="bold" fill="#7C3AED">Leciona</text>
+  </g>
+  <text x="590" y="160" font-size="11" font-weight="bold" fill="#7C3AED">(0, N)</text>
+  <text x="760" y="315" font-size="11" font-weight="bold" fill="#7C3AED">(1, 1)</text>
+
+  <!-- OFERTA DISCIPLINA -->
+  <g transform="translate(700, 410)" filter="url(#shadow)">
+    <polygon points="0,-25 45,0 0,25 -45,0" fill="#F0FDFA" stroke="#0D9488" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-size="11" font-weight="bold" fill="#0D9488">Oferta</text>
+  </g>
+  <text x="590" y="445" font-size="11" font-weight="bold" fill="#0D9488">(0, N)</text>
+  <text x="735" y="415" font-size="11" font-weight="bold" fill="#0D9488">(1, 1)</text>
+
+  <!-- MATRÍCULA ALUNO (Relacionamento com Atributos: nota, freq) -->
+  <g transform="translate(980, 360)" filter="url(#shadow)">
+    <polygon points="0,-25 45,0 0,25 -45,0" fill="#FEF2F2" stroke="#DC2626" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-size="11" font-weight="bold" fill="#DC2626">Matrícula</text>
+  </g>
+  <text x="900" y="350" font-size="11" font-weight="bold" fill="#DC2626">(0, N)</text>
+  <text x="1030" y="240" font-size="11" font-weight="bold" fill="#DC2626">(1, N)</text>
+
+  <!-- VINCULO CURSO-ALUNO -->
+  <g transform="translate(540, 600)" filter="url(#shadow)">
+    <polygon points="0,-20 40,0 0,20 -40,0" fill="#FFFFFF" stroke="#475569" stroke-width="1.5"/>
+    <text x="0" y="4" text-anchor="middle" font-size="10" font-weight="bold" fill="#475569">Vincula</text>
+  </g>
+  <text x="110" y="585" font-size="11" font-weight="bold" fill="#475569">(1, N)</text>
+  <text x="920" y="585" font-size="11" font-weight="bold" fill="#475569">(1, 1)</text>
+
+  <!-- Explanation footer -->
+  <rect x="50" y="640" width="1000" height="45" rx="5" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="550" y="667" text-anchor="middle" font-size="12" fill="#475569">Notação Peter Chen: Retângulos representam Entidades; Losangos representam Relacionamentos; Notação (min, max) expressa a cardinalidade de participação.</text>
+</svg>

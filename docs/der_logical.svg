@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" width="100%" height="100%" style="background:#ffffff; font-family: 'Segoe UI', Arial, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#4B5563"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="35" text-anchor="middle" font-size="22" font-weight="bold" fill="#1E293B">FACULDADE XX — DIAGRAMA ENTIDADE-RELACIONAMENTO (DER LÓGICO / CROW'S FOOT)</text>
+  <text x="600" y="58" text-anchor="middle" font-size="13" fill="#64748B">Sistema de Alocação de Alunos e Professores para Disciplinas dos Cursos</text>
+
+  <!-- DEPARTAMENTO -->
+  <g transform="translate(40, 90)" filter="url(#shadow)">
+    <rect width="210" height="150" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect width="210" height="32" rx="6" fill="#1E40AF"/>
+    <rect width="210" height="6" y="26" fill="#1E40AF"/>
+    <text x="105" y="21" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">DEPARTAMENTO</text>
+    
+    <text x="12" y="52" font-size="11" font-weight="bold" fill="#D97706">PK</text>
+    <text x="36" y="52" font-size="11" fill="#1E293B">id_depto : INT</text>
+    <line x1="8" y1="60" x2="202" y2="60" stroke="#E2E8F0"/>
+    
+    <text x="36" y="76" font-size="11" fill="#334155">nome_depto : VARCHAR(100)</text>
+    <text x="36" y="94" font-size="11" fill="#334155">sigla : VARCHAR(10)</text>
+    <text x="12" y="112" font-size="11" font-weight="bold" fill="#2563EB">FK</text>
+    <text x="36" y="112" font-size="11" fill="#334155">id_chefe_prof : INT</text>
+  </g>
+
+  <!-- CURSO -->
+  <g transform="translate(40, 310)" filter="url(#shadow)">
+    <rect width="210" height="190" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect width="210" height="32" rx="6" fill="#1E40AF"/>
+    <rect width="210" height="6" y="26" fill="#1E40AF"/>
+    <text x="105" y="21" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">CURSO</text>
+    
+    <text x="12" y="52" font-size="11" font-weight="bold" fill="#D97706">PK</text>
+    <text x="36" y="52" font-size="11" fill="#1E293B">id_curso : INT</text>
+    <line x1="8" y1="60" x2="202" y2="60" stroke="#E2E8F0"/>
+    
+    <text x="36" y="76" font-size="11" fill="#334155">codigo_curso : VARCHAR(10)</text>
+    <text x="36" y="94" font-size="11" fill="#334155">nome_curso : VARCHAR(100)</text>
+    <text x="36" y="112" font-size="11" fill="#334155">grau_academico : VARCHAR(30)</text>
+    <text x="36" y="130" font-size="11" fill="#334155">duracao_semestres : INT</text>
+    <text x="36" y="148" font-size="11" fill="#334155">carga_horaria_total : INT</text>
+    <text x="12" y="166" font-size="11" font-weight="bold" fill="#2563EB">FK</text>
+    <text x="36" y="166" font-size="11" fill="#334155">id_depto : INT</text>
+  </g>
+
+  <!-- PROFESSOR -->
+  <g transform="translate(340, 90)" filter="url(#shadow)">
+    <rect width="230" height="210" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect width="230" height="32" rx="6" fill="#0D9488"/>
+    <rect width="230" height="6" y="26" fill="#0D9488"/>
+    <text x="115" y="21" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">PROFESSOR (~200)</text>
+    
+    <text x="12" y="52" font-size="11" font-weight="bold" fill="#D97706">PK</text>
+    <text x="36" y="52" font-size="11" fill="#1E293B">id_professor : INT</text>
+    <line x1="8" y1="60" x2="222" y2="60" stroke="#E2E8F0"/>
+    
+    <text x="36" y="76" font-size="11" fill="#334155">matricula_prof : VARCHAR(15)</text>
+    <text x="36" y="94" font-size="11" fill="#334155">nome_completo : VARCHAR(120)</text>
+    <text x="36" y="112" font-size="11" fill="#334155">cpf : VARCHAR(14)</text>
+    <text x="36" y="130" font-size="11" fill="#334155">email_institucional : VARCHAR(100)</text>
+    <text x="36" y="148" font-size="11" fill="#334155">titulacao : VARCHAR(30)</text>
+    <text x="36" y="166" font-size="11" fill="#334155">regime_trabalho : VARCHAR(20)</text>
+    <text x="12" y="184" font-size="11" font-weight="bold" fill="#2563EB">FK</text>
+    <text x="36" y="184" font-size="11" fill="#334155">id_depto : INT</text>
+  </g>
+
+  <!-- DISCIPLINA -->
+  <g transform="translate(340, 370)" filter="url(#shadow)">
+    <rect width="230" height="190" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect width="230" height="32" rx="6" fill="#0D9488"/>
+    <rect width="230" height="6" y="26" fill="#0D9488"/>
+    <text x="115" y="21" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">DISCIPLINA</text>
+    
+    <text x="12" y="52" font-size="11" font-weight="bold" fill="#D97706">PK</text>
+    <text x="36" y="52" font-size="11" fill="#1E293B">id_disciplina : INT</text>
+    <line x1="8" y1="60" x2="222" y2="60" stroke="#E2E8F0"/>
+    
+    <text x="36" y="76" font-size="11" fill="#334155">codigo_disciplina : VARCHAR(15)</text>
+    <text x="36" y="94" font-size="11" fill="#334155">nome_disciplina : VARCHAR(100)</text>
+    <text x="36" y="112" font-size="11" fill="#334155">carga_horaria : INT</text>
+    <text x="36" y="130" font-size="11" fill="#334155">creditos : INT</text>
+    <text x="36" y="148" font-size="11" fill="#334155">ementa : TEXT</text>
+    <text x="12" y="166" font-size="11" font-weight="bold" fill="#2563EB">FK</text>
+    <text x="36" y="166" font-size="11" fill="#334155">id_depto : INT</text>
+  </g>
+
+  <!-- MATRIZ_CURRICULAR (associativa) -->
+  <g transform="translate(180, 590)" filter="url(#shadow)">
+    <rect width="210" height="150" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect width="210" height="32" rx="6" fill="#475569"/>
+    <rect width="210" height="6" y="26" fill="#475569"/>
+    <text x="105" y="21" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">MATRIZ_CURRICULAR</text>
+    
+    <text x="12" y="52" font-size="11" font-weight="bold" fill="#D97706">PK</text>
+    <text x="36" y="52" font-size="11" fill="#1E293B">id_matriz : INT</text>
+    <line x1="8" y1="60" x2="202" y2="60" stroke="#E2E8F0"/>
+    
+    <text x="12" y="76" font-size="11" font-weight="bold" fill="#2563EB">FK</text>
+    <text x="36" y="76" font-size="11" fill="#334155">id_curso : INT</text>
+    <text x="12" y="94" font-size="11" font-weight="bold" fill="#2563EB">FK</text>
+    <text x="36" y="94" font-size="11" fill="#334155">id_disciplina : INT</text>
+    <text x="36" y="112" font-size="11" fill="#334155">periodo_ideal : INT</text>
+    <text x="36" y="130" font-size="11" fill="#334155">obrigatoria : BOOLEAN</text>
+  </g>
+
+  <!-- TURMA (Alocação Docente e Espacial) -->
+  <g transform="translate(660, 210)" filter="url(#shadow)">
+    <rect width="220" height="230" rx="6" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2"/>
+    <rect width="220" height="32" rx="6" fill="#7C3AED"/>
+    <rect width="220" height="6" y="26" fill="#7C3AED"/>
+    <text x="110" y="21" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">TURMA (Alocação Docente)</text>
+    
+    <text x="12" y="52" font-size="11" font-weight="bold" fill="#D97706">PK</text>
+    <text x="36" y="52" font-size="11" fill="#1E293B">id_turma : INT</text>
+    <line x1="8" y1="60" x2="212" y2="60" stroke="#E2E8F0"/>
+    
+    <text x="36" y="76" font-size="11" fill="#334155">codigo_turma : VARCHAR(20)</text>
+    <text x="36" y="94" font-size="11" fill="#334155">ano_semestre : VARCHAR(10)</text>
+    <text x="12" y="112" font-size="11" font-weight="bold" fill="#2563EB">FK</text>
+    <text x="36" y="112" font-size="11" fill="#334155">id_disciplina : INT</text>
+    <text x="12" y="130" font-size="11" font-weight="bold" fill="#2563EB">FK</text>
+    <text x="36" y="130" font-size="11" fill="#7C3AED; font-weight:bold;">id_professor : INT</text>
+    <text x="36" y="148" font-size="11" fill="#334155">dia_semana : VARCHAR(15)</text>
+    <text x="36" y="166" font-size="11" fill="#334155">horario_inicio : TIME</text>
+    <text x="36" y="184" font-size="11" fill="#334155">horario_fim : TIME</text>
+    <text x="36" y="202" font-size="11" fill="#334155">sala_bloco : VARCHAR(30)</text>
+    <text x="36" y="220" font-size="11" fill="#334155">limite_vagas : INT</text>
+  </g>
+
+  <!-- ALUNO -->
+  <g transform="translate(950, 90)" filter="url(#shadow)">
+    <rect width="210" height="230" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect width="210" height="32" rx="6" fill="#0284C7"/>
+    <rect width="210" height="6" y="26" fill="#0284C7"/>
+    <text x="105" y="21" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">ALUNO (~4.000)</text>
+    
+    <text x="12" y="52" font-size="11" font-weight="bold" fill="#D97706">PK</text>
+    <text x="36" y="52" font-size="11" fill="#1E293B">id_aluno : INT</text>
+    <line x1="8" y1="60" x2="202" y2="60" stroke="#E2E8F0"/>
+    
+    <text x="36" y="76" font-size="11" fill="#334155">matricula_aluno : VARCHAR(15)</text>
+    <text x="36" y="94" font-size="11" fill="#334155">nome_completo : VARCHAR(120)</text>
+    <text x="36" y="112" font-size="11" fill="#334155">cpf : VARCHAR(14)</text>
+    <text x="36" y="130" font-size="11" fill="#334155">data_nascimento : DATE</text>
+    <text x="36" y="148" font-size="11" fill="#334155">email : VARCHAR(100)</text>
+    <text x="36" y="166" font-size="11" fill="#334155">telefone : VARCHAR(20)</text>
+    <text x="36" y="184" font-size="11" fill="#334155">status_matricula : VARCHAR(20)</text>
+    <text x="12" y="202" font-size="11" font-weight="bold" fill="#2563EB">FK</text>
+    <text x="36" y="202" font-size="11" fill="#334155">id_curso : INT</text>
+  </g>
+
+  <!-- MATRICULA_TURMA (Alocação Discente) -->
+  <g transform="translate(950, 420)" filter="url(#shadow)">
+    <rect width="220" height="210" rx="6" fill="#FFFFFF" stroke="#DC2626" stroke-width="2"/>
+    <rect width="220" height="32" rx="6" fill="#DC2626"/>
+    <rect width="220" height="6" y="26" fill="#DC2626"/>
+    <text x="110" y="21" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">MATRICULA_TURMA (Alocação)</text>
+    
+    <text x="12" y="52" font-size="11" font-weight="bold" fill="#D97706">PK</text>
+    <text x="36" y="52" font-size="11" fill="#1E293B">id_matricula_turma : INT</text>
+    <line x1="8" y1="60" x2="212" y2="60" stroke="#E2E8F0"/>
+    
+    <text x="12" y="76" font-size="11" font-weight="bold" fill="#2563EB">FK</text>
+    <text x="36" y="76" font-size="11" fill="#DC2626; font-weight:bold;">id_aluno : INT</text>
+    <text x="12" y="94" font-size="11" font-weight="bold" fill="#2563EB">FK</text>
+    <text x="36" y="94" font-size="11" fill="#7C3AED; font-weight:bold;">id_turma : INT</text>
+    <text x="36" y="112" font-size="11" fill="#334155">data_inscricao : DATE</text>
+    <text x="36" y="130" font-size="11" fill="#334155">nota_1 : DECIMAL(4,2)</text>
+    <text x="36" y="148" font-size="11" fill="#334155">nota_2 : DECIMAL(4,2)</text>
+    <text x="36" y="166" font-size="11" fill="#334155">nota_final : DECIMAL(4,2)</text>
+    <text x="36" y="184" font-size="11" fill="#334155">frequencia_pct : DECIMAL(5,2)</text>
+    <text x="36" y="202" font-size="11" fill="#334155">situacao : VARCHAR(25)</text>
+  </g>
+
+  <!-- Connectors / Relationships with Crow's Foot style markers -->
+  <!-- DEPTO -> PROFESSOR (1:N) -->
+  <path d="M 250 160 L 340 160" fill="none" stroke="#475569" stroke-width="2"/>
+  <text x="260" y="152" font-size="11" font-weight="bold" fill="#475569">1</text>
+  <text x="325" y="152" font-size="11" font-weight="bold" fill="#475569">N</text>
+
+  <!-- DEPTO -> CURSO (1:N) -->
+  <path d="M 145 240 L 145 310" fill="none" stroke="#475569" stroke-width="2"/>
+  <text x="155" y="260" font-size="11" font-weight="bold" fill="#475569">1</text>
+  <text x="155" y="295" font-size="11" font-weight="bold" fill="#475569">N</text>
+
+  <!-- DEPTO -> DISCIPLINA (1:N) -->
+  <path d="M 250 210 L 300 210 L 300 430 L 340 430" fill="none" stroke="#475569" stroke-width="2"/>
+  <text x="255" y="205" font-size="11" font-weight="bold" fill="#475569">1</text>
+  <text x="325" y="425" font-size="11" font-weight="bold" fill="#475569">N</text>
+
+  <!-- CURSO -> MATRIZ -> DISCIPLINA (N:M) -->
+  <path d="M 180 500 L 180 540 L 230 540 L 230 590" fill="none" stroke="#475569" stroke-width="2"/>
+  <text x="190" y="520" font-size="11" font-weight="bold" fill="#475569">1</text>
+  <text x="240" y="580" font-size="11" font-weight="bold" fill="#475569">N</text>
+
+  <path d="M 440 560 L 440 640 L 390 640" fill="none" stroke="#475569" stroke-width="2"/>
+  <text x="445" y="580" font-size="11" font-weight="bold" fill="#475569">1</text>
+  <text x="400" y="635" font-size="11" font-weight="bold" fill="#475569">N</text>
+
+  <!-- CURSO -> ALUNO (1:N) -->
+  <path d="M 250 480 L 300 480 L 300 770 L 1055 770 L 1055 320" fill="none" stroke="#475569" stroke-width="2"/>
+  <text x="260" y="475" font-size="11" font-weight="bold" fill="#475569">1</text>
+  <text x="1065" y="340" font-size="11" font-weight="bold" fill="#475569">N</text>
+
+  <!-- PROFESSOR -> TURMA (1:N Alocação Docente) -->
+  <path d="M 570 200 L 660 250" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-dasharray="none"/>
+  <text x="580" y="195" font-size="11" font-weight="bold" fill="#7C3AED">1</text>
+  <text x="640" y="240" font-size="11" font-weight="bold" fill="#7C3AED">N (Leciona)</text>
+
+  <!-- DISCIPLINA -> TURMA (1:N) -->
+  <path d="M 570 430 L 620 430 L 620 350 L 660 350" fill="none" stroke="#0D9488" stroke-width="2.5"/>
+  <text x="575" y="425" font-size="11" font-weight="bold" fill="#0D9488">1</text>
+  <text x="640" y="340" font-size="11" font-weight="bold" fill="#0D9488">N</text>
+
+  <!-- TURMA -> MATRICULA_TURMA (1:N) -->
+  <path d="M 880 320 L 920 320 L 920 525 L 950 525" fill="none" stroke="#7C3AED" stroke-width="2.5"/>
+  <text x="890" y="315" font-size="11" font-weight="bold" fill="#7C3AED">1</text>
+  <text x="930" y="515" font-size="11" font-weight="bold" fill="#7C3AED">N</text>
+
+  <!-- ALUNO -> MATRICULA_TURMA (1:N Alocação Discente) -->
+  <path d="M 1055 320 L 1055 420" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="1065" y="340" font-size="11" font-weight="bold" fill="#DC2626">1</text>
+  <text x="1065" y="410" font-size="11" font-weight="bold" fill="#DC2626">N (Inscreve-se)</text>
+
+  <!-- Legend Box -->
+  <g transform="translate(430, 680)">
+    <rect width="480" height="90" rx="6" fill="#F8FAFC" stroke="#CBD5E1"/>
+    <text x="15" y="22" font-size="12" font-weight="bold" fill="#1E293B">LEGENDA DO MODELO:</text>
+    <circle cx="25" cy="42" r="5" fill="#D97706"/>
+    <text x="38" y="46" font-size="11" fill="#334155">Chave Primária (PK)</text>
+    <circle cx="170" cy="42" r="5" fill="#2563EB"/>
+    <text x="183" y="46" font-size="11" fill="#334155">Chave Estrangeira (FK)</text>
+    <rect x="310" y="37" width="10" height="10" fill="#7C3AED"/>
+    <text x="328" y="46" font-size="11" fill="#334155">Alocação de Professor</text>
+    <rect x="20" y="65" width="10" height="10" fill="#DC2626"/>
+    <text x="38" y="74" font-size="11" fill="#334155">Alocação de Aluno</text>
+    <text x="170" y="74" font-size="11" fill="#64748B">Cardinalidades expressas nas pontas das conexões (1 : N / N : M)</text>
+  </g>
+</svg>
